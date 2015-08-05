@@ -14,6 +14,9 @@ $export HOST="HOSTA"
 $envconf a.conf
 
 $cat a.conf
+[servera]
+HOST=HOSTA
+
 ```
 
 ``` 
