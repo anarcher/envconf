@@ -2,6 +2,7 @@
 
 It's simple env based config file transform for docker boot time configuration.
 
+You can download [binary](https://github.com/anarcher/envconf/releases)
 
 ```
 $cat a.conf
