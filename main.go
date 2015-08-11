@@ -61,14 +61,11 @@ func main() {
 }
 
 func transformFile(path string) error {
-	t := template.New(path)
-	t = t.Funcs(templateFuncMap)
-	t, err := t.ParseFiles(path)
+	t, err := template.ParseFiles(path)
 	if err != nil {
 		log.Printf("Err: Parsing file %s %s", path, err)
 		return err
 	}
-
 	t = t.Funcs(templateFuncMap)
 
 	file, err := os.OpenFile(path, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0644)
