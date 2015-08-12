@@ -37,7 +37,10 @@ func init() {
 	templateFuncMap = template.FuncMap{
 		"default": func(args ...string) string {
 			defer recovery()
-			return args[0]
+			if len(args) <= 0 {
+				return ""
+			}
+			return args[len(args)-1]
 		},
 		"in": func(arg string, slice []string) bool {
 			defer recovery()
